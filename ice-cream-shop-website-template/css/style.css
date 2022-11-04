@@ -9758,3 +9758,18 @@ h6,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.scrolldown {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  -webkit-animation: header_fixed 0.6s;
+          animation: header_fixed 0.6s;
+}
+.scrolldown .nav-bar::before {
+  background: transparent !important;
+}

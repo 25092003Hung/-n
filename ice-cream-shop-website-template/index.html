@@ -34,7 +34,9 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid bg-primary py-3 d-none d-md-block">
+
+    
+    <div class="container-fluid bg-primary py-3 d-none d-md-block" style="position: relative;z-index: 200;top: 0px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -72,8 +74,8 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+    <div class="container-fluid nav-bar p-0" style="z-index: 200;" id="header">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 1000;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                 <a href="index.html" class="navbar-brand d-block d-lg-none">
                     <h1 class="m-0 display-4 text-primary">
@@ -102,7 +104,6 @@
         </div>
     </div>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 pb-5">
@@ -628,9 +629,26 @@
     <!-- wow -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/wow.min.js"></script>
-              <script>
-              new WOW().init();
-              </script>
+    <script>
+    new WOW().init();
+    </script>
+    <!-- back-top-top -->
+    <script>
+        
+jQuery(document).ready(function() {
+	window.onscroll = changePos;
+
+	function changePos() {
+		var header = $("#header");
+		var headerheight = $("#header").height() + 200;
+		if (window.pageYOffset > headerheight) {		
+			header.addClass('scrolldown');
+		} else {
+			header.removeClass('scrolldown');
+		}
+	}
+});
+      </script>
 </body>
 
 </html>
